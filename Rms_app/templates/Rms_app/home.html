@@ -1,0 +1,11 @@
+{% csrf_token %}
+{% if all_restaurant %}
+    <ul>
+        {% for restaurant in all_restaurant %}
+        <li><a href="{{restaurant.id}}/">
+            {{ restaurant.name}} </a>   Location is :  {{restaurant.location}}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No List are available. </p>
+{% endif %}

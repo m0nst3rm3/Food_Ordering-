@@ -1,0 +1,15 @@
+<h>{{ restaurant.name }}</h>
+<form action="{% url 'final_order' restaurant.id%}" method="POST">
+    {% csrf_token %}
+    <p>Select your Food from Food Option.</p>
+    <label for="Food_Name"> Choose your Food:</label>
+    <select name="food" id="Food_Name">
+        {% for foods in food_names %}
+        <option value="{{foods.food_name}}" id="selected_food">
+            {{ foods.food_name }}
+        </option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <input type="submit" value="SUBMIT">
+</form>
