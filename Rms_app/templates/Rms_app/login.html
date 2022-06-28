@@ -1,4 +1,6 @@
-<form action="action_page" method="post">
+<h1>Please Login to Order</h1>
+<form action="home_page" method="post">
+    {% csrf_token %}
     <div class="container">
         <label for="user_name"><b> Username </b></label>
         <input type="text" placeholder="Enter Username" name="user_name" required>
